@@ -42,6 +42,12 @@ class MultiSelectController {
     isSelecting = !disableEditingWhenNoneSelected;
     selectedIndexes.clear();
   }
+  
+  /// Select all below
+  void selectAllBelow(int index) {
+    isSelecting = true;
+    selectedIndexes = [for (var i = index; i < listLength; i++) i];
+  }
 
   /// Toggle at index
   void toggle(int index) {
